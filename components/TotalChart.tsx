@@ -11,7 +11,7 @@ export default async function Index() {
   const supabase = createClient();
   
   const {data: players, error: playerserror} = await supabase
-    .from('results')
+    .from('orderedresults')
     .select()
     .gt('number_of_sessions', 5)
     if(playerserror){
