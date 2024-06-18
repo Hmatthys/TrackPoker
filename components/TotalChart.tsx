@@ -1,28 +1,19 @@
 
 import { createClient } from "@/utils/supabase/server";
 
-import Link from 'next/link';
+
 import React from 'react';
 import {  Chart  } from 'primereact/chart';
 
-
-function graphProfit(profits: Array<number>): Array<number>{
-    const out = [];
-    let total = 0;
-    for(let i = 0; i< profits.length; i++){
-      total += profits[i];
-      out.push(total);
-    }
-    return out
-  }
 
 export default async function Index() {
 
   const supabase = createClient();
   
   const {data: players, error: playerserror} = await supabase
-    .from('player')
+    .from('results')
     .select()
+    .gt('number_of_sessions', 5)
     if(playerserror){
         return <p>Players error</p>
     }
