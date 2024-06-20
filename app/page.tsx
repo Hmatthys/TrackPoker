@@ -16,7 +16,7 @@ export default async function Index() {
       return (
 
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
-            <TabView>
+            <TabView scrollable={true}>
               <TabPanel header="Players" headerStyle={{   flex: '1', backgroundColor: '#202c34' }}>
                 <PlayerTable />
               </TabPanel>
