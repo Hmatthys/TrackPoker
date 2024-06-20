@@ -17,13 +17,13 @@ export default async function Index() {
 
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
             <TabView>
-              <TabPanel header="Players" headerStyle={{marginLeft: '0.2rem', width: '20%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px' }}>
+              <TabPanel header="Players" headerStyle={{marginLeft: '0.5rem', width: '15%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
                 <PlayerTable />
               </TabPanel>
-              <TabPanel header="Games" headerStyle={{marginLeft: '0.2rem',  width: '20%',  backgroundColor: '#202c34' }}>
+              <TabPanel header="Games" headerStyle={{marginLeft: '0.5rem',  width: '15%',  backgroundColor: '#202c34', textAlign: 'center' }}>
                 <GameTable />
               </TabPanel>
-              <TabPanel header="Chart" headerStyle={{ marginLeft: '0.2rem', width: '20%', backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px' }}>
+              <TabPanel header="Chart" headerStyle={{ marginLeft: '0.5rem', width: '15%', backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
                 <TotalChart />
               </TabPanel>
             </TabView>
