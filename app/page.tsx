@@ -6,7 +6,7 @@ import GameTable from "@/components/GameTable";
 import TotalChart from "@/components/TotalChart";
 import { TabView, TabPanel } from 'primereact/tabview';
 import React from 'react';
-import 'globals.css';
+
 
 
 export default async function Index() {
