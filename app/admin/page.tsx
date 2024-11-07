@@ -1,7 +1,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import React, { useEffect, useState } from 'react';
-import { submit } from './actions'
+import { submitGame } from './actions'
 
 
 
@@ -27,16 +27,16 @@ export default async function Player() {
 
 
   return (
-    <div style={{ width: '100%', margin: '0 auto'}}>
+    <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
 
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
             <form>
-              <label>Game date:</label>
+              <p><label>Game date:</label></p>
               <input id="date" name="date" type="number" required/>
-              <label>Game location:</label>
+              <p><label>Game location:</label></p>
               <input id="location" name="location" type="string" required/>
-              <button formAction={submit}>Submit</button>
+              <p><button formAction={submitGame}>Submit</button></p>
 
             </form>
           </div>
