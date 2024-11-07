@@ -1,7 +1,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import React, { useEffect, useState } from 'react';
-
+import { submit } from './actions'
 
 
 
@@ -13,7 +13,7 @@ import React, { useEffect, useState } from 'react';
 
 
 export default async function Player() {
-  const supabase = createClient();
+
 
   
 
@@ -22,22 +22,9 @@ export default async function Player() {
       
   
 
-const {data: sessions, error: sessionerror, count: numsessions} = await supabase
-  .from('sessions')
-  .select('*', {count: 'exact', head: true});
-  if(sessionerror){
-    return <p>Session error</p>
-  }
 
-const {data: game, error: gameerror, count: numgames} = await supabase
-  .from('game')
-  .select('*', {count: 'exact', head: true});
-  if(gameerror){
-    return <p>game error</p>
-  }
-let test = "a"
 
-  
+
 
   return (
     <div style={{ width: '100%', margin: '0 auto'}}>
@@ -45,9 +32,11 @@ let test = "a"
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
             <form>
-              <label>Test</label>
-              <input id="player" name="player" type="plyaer" required/>
-              <button formAction={test}>Test</button>
+              <label>Game date:</label>
+              <input id="date" name="date" type="date" required/>
+              <label>Game location:</label>
+              <input id="location" name="location" type="location" required/>
+              <button formAction={submit}>Submit</button>
 
             </form>
           </div>
@@ -55,7 +44,7 @@ let test = "a"
         <div style = {{  width: '100%' }}>
           <p style = {{ textAlign: 'center' }}>
             <u><a href={'/..'}>Home</a></u>
-            {test}
+           
           </p>
           
         </div>
