@@ -33,9 +33,9 @@ export default async function Player() {
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
             <form>
               <p><label>Game date:</label></p>
-              <input id="date" name="date" type="number" required/>
+              <input id="date" name="date" type="number" color="black" required/>
               <p><label>Game location:</label></p>
-              <input id="location" name="location" type="string" required/>
+              <input id="location" name="location" type="text" color="black" required/>
               <p><button formAction={submitGame}>Submit</button></p>
 
             </form>
