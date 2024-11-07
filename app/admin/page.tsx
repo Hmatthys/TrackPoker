@@ -11,6 +11,7 @@ import { Chart } from 'primereact/chart';
 
 
 
+
 export default async function Player() {
   const supabase = createClient();
 
@@ -34,9 +35,12 @@ const {data: game, error: gameerror, count: numgames} = await supabase
   if(gameerror){
     return <p>game error</p>
   }
+let test = 1
 
-
-
+  const handleSubmit= (event : React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    test = 0;
+  }
   
 
   return (
@@ -44,14 +48,18 @@ const {data: game, error: gameerror, count: numgames} = await supabase
 
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
-            <p>{numsessions}</p>
-            <p>{numgames}</p>
-    
+            <form onSubmit={(e) => handleSubmit(e)}>
+
+
+
+              <input type="submit" value="Submit"></input>
+            </form>
           </div>
         
         <div style = {{  width: '100%' }}>
           <p style = {{ textAlign: 'center' }}>
             <u><a href={'/..'}>Home</a></u>
+            {test}
           </p>
           
         </div>
