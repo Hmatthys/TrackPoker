@@ -1,8 +1,7 @@
-"use client";
+
 import { createClient } from "@/utils/supabase/server";
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { Chart } from 'primereact/chart';
+
 
 
 
@@ -37,12 +36,7 @@ const {data: game, error: gameerror, count: numgames} = await supabase
     return <p>game error</p>
   }
 let test = "a"
-  const [p, updateP] = useState("");
-  const [g, updateG] = useState("");
-  const handleSubmit= (event : React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    test = p;
-  }
+
   
 
   return (
@@ -50,20 +44,11 @@ let test = "a"
 
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
-            <form onSubmit={(e) => handleSubmit(e)}>
-              <label>
-                Test
-                <input
-                type="test"
-                value={p}
-                onChange={(e) =>{
-                  updateP(e.target.value);
-                }}
-              />
-              </label>
+            <form>
+              <label>Test</label>
+              <input id="player" name="player" type="plyaer" required/>
+              <button formAction={test}>Test</button>
 
-
-              <button type="submit">Submit</button>
             </form>
           </div>
         
