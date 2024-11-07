@@ -36,13 +36,7 @@ const {data: game, error: gameerror, count: numgames} = await supabase
   }
 
 
-const { data: player, error: playererror } = await supabase
-  .from('player')
-  .select('playerid')
-  .single();
-  if(playererror){
-    return <p>player error</p>
-  }
+
   
 
   return (
