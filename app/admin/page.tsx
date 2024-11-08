@@ -147,6 +147,7 @@ export default async function Player() {
                 <form>
                   <p><label>Name</label></p>
                   <input id="playerName" name="name" style={{color: 'black', width: '100%'}}/>
+                  <p></p>
                   <p><button formAction={createPlayer} style={{backgroundColor: 'white', color: 'black', textAlign: 'center'}}>Submit</button></p>
 
 
