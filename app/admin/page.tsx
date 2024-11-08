@@ -39,7 +39,7 @@ export default async function Player() {
               <input id="location" name="location" type="text" style={{color: 'black'}} required/>
 
               <p><label>Player 1 (id), (profit)</label></p>
-              <select id="p1" name="id">
+              <select id="p1" name="id" style={{color: 'black', width: '40%'}}>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
