@@ -45,9 +45,12 @@ export async function submitGame(formData: FormData) {
         let values: Array<{}> = [];
         let sum = 1
         playerdata.players.forEach((e, index) =>{
-            values.push({sessionid: numsessions + sum, game: numgames + 1, player: e, profit: playerdata.profit[index]})
+            if(e){
+               values.push({sessionid: numsessions + sum, game: numgames + 1, player: e, profit: playerdata.profit[index]})
         
-            sum += 1
+            sum += 1 
+            }
+            
         })
      
      const{ error: sessionsError } = await supabase
