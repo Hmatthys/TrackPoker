@@ -15,7 +15,7 @@ export default async function Index() {
 
       return (
 
-          <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
+          <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', display: 'flex', flexDirection: 'row'}}>
             <TabView>
               <TabPanel header="Players" headerStyle={{marginLeft: '0.5rem', width: '15%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
                 <PlayerTable />
