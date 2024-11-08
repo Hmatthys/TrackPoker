@@ -40,6 +40,7 @@ export default async function Player() {
 
               <p><label>Player 1 (id), (profit)</label></p>
               <select id="p1" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -48,6 +49,7 @@ export default async function Player() {
 
               <p><label>Player 2 (id), (profit)</label></p>
               <select id="p2" name="id" style={{color: 'black', width: '40%'}}>
+                <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -56,6 +58,7 @@ export default async function Player() {
 
               <p><label>Player 3 (id), (profit)</label></p>
               <select id="p3" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -64,6 +67,7 @@ export default async function Player() {
 
               <p><label>Player 4 (id), (profit)</label></p>
               <select id="p4" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -72,6 +76,7 @@ export default async function Player() {
 
               <p><label>Player 5 (id), (profit)</label></p>
               <select id="p5" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -80,6 +85,7 @@ export default async function Player() {
 
               <p><label>Player 6 (id), (profit)</label></p>
               <select id="p6" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -88,6 +94,7 @@ export default async function Player() {
 
               <p><label>Player 7 (id), (profit)</label></p>
               <select id="p7" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -96,6 +103,7 @@ export default async function Player() {
 
               <p><label>Player 8 (id), (profit)</label></p>
               <select id="p8" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -104,6 +112,7 @@ export default async function Player() {
 
               <p><label>Player 9 (id), (profit)</label></p>
               <select id="p9" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -112,6 +121,7 @@ export default async function Player() {
 
               <p><label>Player 10 (id), (profit)</label></p>
               <select id="p10" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
@@ -120,6 +130,7 @@ export default async function Player() {
 
               <p><label>Player 11 (id), (profit)</label></p>
               <select id="p11" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
                 {players?.map((player)=>
                 <option value={player.playerid}>{player.name}</option>
                 )}
