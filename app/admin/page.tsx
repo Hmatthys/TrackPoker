@@ -47,43 +47,83 @@ export default async function Player() {
               <input id="p1profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 2 (id), (profit)</label></p>
-              <input id="p2" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p2" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p2profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 3 (id), (profit)</label></p>
-              <input id="p3" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p3" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p3profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 4 (id), (profit)</label></p>
-              <input id="p4" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p4" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p4profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 5 (id), (profit)</label></p>
-              <input id="p5" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p5" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p5profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 6 (id), (profit)</label></p>
-              <input id="p6" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p6" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p6profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 7 (id), (profit)</label></p>
-              <input id="p7" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p7" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p7profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 8 (id), (profit)</label></p>
-              <input id="p8" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p8" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p8profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 9 (id), (profit)</label></p>
-              <input id="p9" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p9" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p9profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 10 (id), (profit)</label></p>
-              <input id="p10" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p10" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p10profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
               <p><label>Player 11 (id), (profit)</label></p>
-              <input id="p11" name="id" type="number" style={{color: 'black', width: '40%'}}/>
+              <select id="p11" name="id" style={{color: 'black', width: '40%'}}>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
               <input id="p11profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
 
