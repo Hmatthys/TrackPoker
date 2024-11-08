@@ -68,6 +68,29 @@ export async function submitGame(formData: FormData) {
 }
 
 export async function createPlayer(formData: FormData) {
+    const supabase = await createClient()
 
+    const {data: players, error: playererror, count: numplayers} = await supabase
+        .from('player')
+        .select('*', {count: 'exact', head: true})
+        if(playererror){
+            redirect('../../')
+        }
+        const data = {
+            name: formData.get('name') as string,
+        }
+        if(numplayers){
+            const{ error: playerAddError } = await supabase
+            .from('player')
+            .insert({playerid: numplayers + 1, playername: data.name})
+            if(playerAddError){
+                redirect('../../')
+            }
+
+        }
+        
+
+        
+    }
 
 }
