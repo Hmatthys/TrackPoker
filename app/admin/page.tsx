@@ -36,37 +36,37 @@ export default async function Player() {
               <input id="date" name="date" type="number" style={{color: 'black'}} required/>
               <p><label>Game location:</label></p>
               <input id="location" name="location" type="text" style={{color: 'black'}} required/>
-              <p><label>Player 1 (id)\t\tProfit         </label></p>
+              <p><label>Player 1 (id)       Profit         </label></p>
               <input id="p1" name="p1" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p1profit" name="p1profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 2 (id)\t\tProfit  </label></p>
+              <p><label>Player 2 (id)       Profit  </label></p>
               <input id="p2" name="p2" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p2profit" name="p2profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 3 (id)\t\tProfit  </label></p>
+              <p><label>Player 3 (id)       Profit  </label></p>
               <input id="p3" name="p3" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p3profit" name="p3profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 4 (id)\t\tProfit  </label></p>
+              <p><label>Player 4 (id)       Profit  </label></p>
               <input id="p4" name="p4" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p4profit" name="p4profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 5 (id)\t\tProfit  </label></p>
+              <p><label>Player 5 (id)       Profit  </label></p>
               <input id="p5" name="p5" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p5profit" name="p5profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 6 (id)\t\tProfit  </label></p>
+              <p><label>Player 6 (id)       Profit  </label></p>
               <input id="p6" name="p6" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p6profit" name="p6profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 7 (id)\t\tProfit  </label></p>
+              <p><label>Player 7 (id)       Profit  </label></p>
               <input id="p7" name="p7" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p7profit" name="p7profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 8 (id)\t\tProfit  </label></p>
+              <p><label>Player 8 (id)       Profit  </label></p>
               <input id="p8" name="p8" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p8profit" name="p8profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 9 (id)\t\tProfit  </label></p>
+              <p><label>Player 9 (id)       Profit  </label></p>
               <input id="p9" name="p9" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p9profit" name="p9profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 10 (id)\t\tProfit  </label></p>
+              <p><label>Player 10 (id)       Profit  </label></p>
               <input id="p10" name="p10" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p10profit" name="p10profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 11 (id)\t\tProfit  </label></p>
+              <p><label>Player 11 (id)       Profit  </label></p>
               <input id="p11" name="p11" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p11profit" name="p11profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
