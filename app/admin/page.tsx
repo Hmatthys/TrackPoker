@@ -36,6 +36,9 @@ export default async function Player() {
               <input id="date" name="date" type="number" style={{color: 'black'}} required/>
               <p><label>Game location:</label></p>
               <input id="location" name="location" type="text" style={{color: 'black'}} required/>
+              <p><label>Player 1</label></p>
+              <input id="p1" name="p1" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p1profit" name="p1profit" type ="number" style={{color: 'black'}}/>
               <p><button formAction={submitGame}>Submit</button></p>
 
             </form>
