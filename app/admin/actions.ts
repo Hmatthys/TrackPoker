@@ -15,11 +15,22 @@ export async function submitGame(formData: FormData) {
             redirect('../../')
         }
     
+    const {data: session, error: sessionerror, count: numsessions} = await supabase
+        .from('sessions')
+        .select('*', {count: 'exact', head:true})
+        if(sessionerror){
+            redirect('../../')
+        }
+    
     const data = {
         date: formData.get('date') as string,
         location: formData.get('location') as string,
     }
-    if(numgames){
+    const playerdata = {
+        players: formData.getAll('id'),
+        profit: formData.getAll('profit'),
+    }
+    if(numgames && numsessions){
         const { error: createError } = await supabase
         .from('game')
         .insert({ gameid: numgames + 1, gamedate: data.date, location: data.location  })
@@ -28,7 +39,26 @@ export async function submitGame(formData: FormData) {
             redirect('../../')
         }
 
+   
+        
+
+        let values: Array<{}> = [];
+        let sum = 1
+        playerdata.players.forEach((e, index) =>{
+            values.push({sessionid: numsessions + sum, game: numgames + 1, player: e, profit: playerdata.profit[index]})
+        
+            sum += 1
+        })
+     
+     const{ error: sessionsError } = await supabase
+        .from('sessions')
+        .insert(values)
+
+        if(sessionsError){
+            redirect('../../')
+        }
     }
+    
     revalidatePath('/', 'layout')
     redirect('/admin')
     

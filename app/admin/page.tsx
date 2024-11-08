@@ -36,37 +36,37 @@ export default async function Player() {
               <input id="date" name="date" type="number" style={{color: 'black'}} required/>
               <p><label>Game location:</label></p>
               <input id="location" name="location" type="text" style={{color: 'black'}} required/>
-              <p><label>Player 1 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 1 (id), (profit)</label></p>
               <input id="p1" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p1profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 2 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 2 (id), (profit)</label></p>
               <input id="p2" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p2profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 3 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 3 (id), (profit)</label></p>
               <input id="p3" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p3profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 4 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 4 (id), (profit)</label></p>
               <input id="p4" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p4profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 5 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 5 (id), (profit)</label></p>
               <input id="p5" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p5profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 6 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 6 (id), (profit)</label></p>
               <input id="p6" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p6profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 7 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 7 (id), (profit)</label></p>
               <input id="p7" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p7profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 8 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 8 (id), (profit)</label></p>
               <input id="p8" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p8profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 9 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 9 (id), (profit)</label></p>
               <input id="p9" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p9profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 10 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 10 (id), (profit)</label></p>
               <input id="p10" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p10profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
-              <p><label>Player 11 (id)&emsp&emsp&emsp&emspProfit</label></p>
+              <p><label>Player 11 (id), (profit)</label></p>
               <input id="p11" name="id" type="number" style={{color: 'black', width: '40%'}}/>
               <input id="p11profit" name="profit" type ="number" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
