@@ -39,9 +39,6 @@ export async function submitGame(formData: FormData) {
             redirect('../../')
         }
 
-   
-        
-
         let values: Array<{}> = [];
         let sum = 1
         playerdata.players.forEach((e, index) =>{
@@ -63,7 +60,14 @@ export async function submitGame(formData: FormData) {
     }
     
     revalidatePath('/', 'layout')
-    redirect('/admin')
-    
-    
+    if(numgames){
+       redirect(`/games/${numgames + 1}`) 
+    }else{
+        redirect('../../')
+    }
+}
+
+export async function createPlayer(formData: FormData) {
+
+
 }

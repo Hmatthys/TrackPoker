@@ -1,7 +1,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import React, { useEffect, useState } from 'react';
-import { submitGame } from './actions'
+import { submitGame, createPlayer } from './actions'
 
 
 
@@ -27,7 +27,7 @@ export default async function Player() {
 
 
   return (
-    <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
+    <div style={{ width: 'clamp(300px, 50%, 900px', margin: '0 auto', padding: '1rem'}}>
 
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
@@ -141,6 +141,18 @@ export default async function Player() {
               <p><button formAction={submitGame} style={{backgroundColor: 'white', color: 'black', textAlign: 'center' }}>Submit</button></p>
 
             </form>
+          </div>
+          <div style={{ width: 'clamp(300px, 50%, 900px', margin: '0 auto', padding: '1rem'}}>
+                <p>Add a player:</p>
+                <form>
+                  <p><label>Name</label></p>
+                  <input id="playerName" name="name" style={{color: 'black', width: '100%'}}/>
+                  <p><button formAction={createPlayer} style={{backgroundColor: 'white', color: 'black', textAlign: 'center'}}>Submit</button></p>
+
+
+                </form>
+
+
           </div>
         
         <div style = {{  width: '100%' }}>
