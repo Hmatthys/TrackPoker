@@ -82,12 +82,13 @@ export async function createPlayer(formData: FormData) {
         if(numplayers){
             const{ error: playerAddError } = await supabase
             .from('player')
-            .insert({playerid: numplayers + 1, playername: data.name})
+            .insert({playerid: numplayers + 1, name: data.name})
             if(playerAddError){
                 redirect('../../')
             }
 
         }
+
         
 
         
