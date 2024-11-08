@@ -36,9 +36,40 @@ export default async function Player() {
               <input id="date" name="date" type="number" style={{color: 'black'}} required/>
               <p><label>Game location:</label></p>
               <input id="location" name="location" type="text" style={{color: 'black'}} required/>
+              <p><label>Player 1          </label></p>
+              <input id="p1" name="p1" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p1profit" name="p1profit" type ="number" style={{padding: '1rem', color: 'black'}}/>
+              <p><label>Player 2</label></p>
+              <input id="p2" name="p2" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p2profit" name="p2profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 3</label></p>
+              <input id="p3" name="p3" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p3profit" name="p3profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 4</label></p>
+              <input id="p4" name="p4" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p4profit" name="p4profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 5</label></p>
+              <input id="p5" name="p5" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p5profit" name="p5profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 6</label></p>
+              <input id="p6" name="p6" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p6profit" name="p6profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 7</label></p>
+              <input id="p7" name="p7" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p7profit" name="p7profit" type ="number" style={{color: 'black'}}/>
               <p><label>Player 1</label></p>
               <input id="p1" name="p1" type="number" style={{color: 'black', width: '50%'}}/>
               <input id="p1profit" name="p1profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 1</label></p>
+              <input id="p1" name="p1" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p1profit" name="p1profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 1</label></p>
+              <input id="p1" name="p1" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p1profit" name="p1profit" type ="number" style={{color: 'black'}}/>
+              <p><label>Player 1</label></p>
+              <input id="p1" name="p1" type="number" style={{color: 'black', width: '50%'}}/>
+              <input id="p1profit" name="p1profit" type ="number" style={{color: 'black'}}/>
+
               <p><button formAction={submitGame}>Submit</button></p>
 
             </form>
