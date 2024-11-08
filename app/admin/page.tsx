@@ -27,7 +27,7 @@ export default async function Player() {
 
 
   return (
-    <div style={{ width: '45%', margin: '0 auto', padding: '1rem'}}>
+    <div style={{ width: '45%', margin: '0 auto'}}>
 
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
@@ -142,7 +142,7 @@ export default async function Player() {
 
             </form>
           </div>
-          <div style={{ width: '50%', margin: '0 auto', padding: '1rem'}}>
+          <div style={{ width: '45%', margin: '0 auto'}}>
                 <p>Add a player:</p>
                 <form>
                   <p><label>Name</label></p>
