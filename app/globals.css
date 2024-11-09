@@ -29,6 +29,13 @@
 .animate-in {
   animation: animateIn 0.3s ease 0.15s both;
 }
+.unity-tab__header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
 
 
 @keyframes animateIn {
