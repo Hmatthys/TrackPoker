@@ -35,7 +35,7 @@ export async function submitGame(formData: FormData) {
 
         let values: Array<{}> = []
         let sum = 1
-        let profitSum = 0.0
+        let profitSum = 0
         playerdata.players.forEach((e, index) =>{
             if(playerdata.players[index] != "0"){
                values.push({sessionid: numsessions + sum, game: numgames + 1, player: e, profit: playerdata.profit[index]})
