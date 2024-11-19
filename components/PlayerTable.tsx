@@ -27,7 +27,7 @@ export default async function Index() {
         <th style = {{textAlign: 'center'}}>Average Profit</th>
         </tr>
             {player.map((player) => (
-            <tr key={player.playerid} style= {{borderBottom: '1px', borderColor: 'white'}}>
+            <tr key={player.playerid} style= {{border: '1px solid white'}}>
             <td style = {{borderBottom: '1px', borderColor: 'white'}}><Link href={`/players/${player.playerid}`}>{player.name}</Link></td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player.profit}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player.number_of_sessions}</td>
