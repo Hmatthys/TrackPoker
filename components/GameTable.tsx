@@ -40,7 +40,7 @@ export default async function Index() {
             
         
             {games.map((games) => (
-                <tr key={games.gameid}>
+                <tr key={games.gameid} style= {{borderBottom: '1px solid gray'}}>
                     <td><Link href={`/games/${games.gameid}`}>{getMonth(games.gamedate)}/{getDay(games.gamedate)}/{getYear(games.gamedate)}</Link></td>
                     <td style = {{  textAlign: 'center' }}>{games.location}</td>
                 </tr>))}
