@@ -31,7 +31,7 @@ export default async function Index() {
             <td style = {{borderBottom: '1px', borderColor: 'white'}}><Link href={`/players/${player.playerid}`}>{player.name}</Link></td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player.profit}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player.number_of_sessions}</td>
-            <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player.profit / player.number_of_sessions}</td>
+            <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{Math.floor(player.profit / player.number_of_sessions)}</td>
             </tr>))} 
         
         </table>  
