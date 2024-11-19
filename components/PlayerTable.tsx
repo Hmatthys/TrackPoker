@@ -21,7 +21,7 @@ export default async function Index() {
     
     <table style={{    width: '100%' }}>
         <tr>
-        <th style = {{textAlign: 'left', width: '60%', borderBottom: '1px', borderColor: 'white'}}>Player</th>
+        <th style = {{textAlign: 'left', width: '50%', borderBottom: '1px', borderColor: 'white'}}>Player</th>
         <th style = {{textAlign: 'center'}}>Profit</th> 
         <th style = {{textAlign: 'center'}}>Games Played</th>
         <th style = {{textAlign: 'center'}}>Average Profit</th>
