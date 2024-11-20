@@ -45,7 +45,7 @@ export default async function Index() {
     let playerData = new Array<[number, string, number, number, number]>;
     player.map((e) => {
         playerData.push([e.playerid, e.name, e.number_of_sessions, e.profit, count]);
-        // currentPlace[e.playerid - 1][0] = count;
+        currentPlace[e.playerid - 1][0] = count;
         // currentPlace[e.playerid - 1][2] = e.profit;
         // count += 1;
     })
