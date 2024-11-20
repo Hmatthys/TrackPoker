@@ -40,19 +40,19 @@ export default async function Index() {
   }
     
     
-    let currentPlace =  new Array<[number, number, number]>(numplayers)
-    let count = 1
-    let playerData = new Array<[number, string, number, number, number]>
+    let currentPlace =  new Array<[number, number, number]>(numplayers);
+    let count = 1;
+    let playerData = new Array<[number, string, number, number, number]>;
     player.map((e) => {
-        playerData.push([e.playerid, e.name, e.number_of_sessions, e.profit, count])
+        playerData.push([e.playerid, e.name, e.number_of_sessions, e.profit, count]);
         currentPlace[e.playerid - 1][0] = count;
         currentPlace[e.playerid - 1][2] = e.profit;
         count += 1;
     })
     return <p>1</p>
-    lastGame.map((e) => {
+    lastGame.map((e) => 
       currentPlace[e.player - 1][2] -= e.profit;
-    })
+    )
     currentPlace.sort((a, b) => b[2] - a[2])
     count = 0
     currentPlace.map((e) => {
@@ -61,9 +61,9 @@ export default async function Index() {
     })
     let updatedPlace =  new Array<number>(numplayers)
     count = 0
-    currentPlace.map((e) => {
+    currentPlace.map((e) => 
       updatedPlace[e[0] - 1] = e[0] - e[1] 
-    })
+    )
       return (     
     <div style={{  padding: '10px', margin: '15px', width: '100%', fontSize: '1.2em', backgroundColor: '#202c34', borderRadius: '16px' }}>
     
