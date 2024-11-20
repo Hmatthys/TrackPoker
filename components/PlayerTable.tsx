@@ -68,7 +68,7 @@ export default async function Index() {
     }
     count = 0
     currentPlace.map((e) => 
-      updatedPlace[e[0] - 1] = e[0] - e[1] 
+      updatedPlace[e[0] - 1] = e[1] - e[0] 
     )
       return (     
     <div style={{  padding: '10px', margin: '15px', width: '100%', fontSize: '1.2em', backgroundColor: '#202c34', borderRadius: '16px' }}>
