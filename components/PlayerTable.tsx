@@ -49,24 +49,27 @@ export default async function Index() {
     player.map((e) => {
         playerData.push([e.playerid, e.name, e.number_of_sessions, e.profit, count]);
         currentPlace[e.playerid - 1][0] = count;
-        // currentPlace[e.playerid - 1][2] = e.profit;
-        // count += 1;
+        currentPlace[e.playerid - 1][2] = e.profit;
+        count += 1;
     })
     
-    // lastGame.map((e) => 
-    //   currentPlace[e.player - 1][2] -= e.profit
-    // )
-    // currentPlace.sort((a, b) => b[2] - a[2])
-    // count = 0
-    // currentPlace.map((e) => {
-    //     currentPlace[count][1] = count + 1;
-    //     count += 1;
-    // })
-    let updatedPlace =  new Array<number>(numplayers)
-    // count = 0
-    // currentPlace.map((e) => 
-    //   updatedPlace[e[0] - 1] = e[0] - e[1] 
-    // )
+    lastGame.map((e) => 
+      currentPlace[e.player - 1][2] -= e.profit
+    )
+    currentPlace.sort((a, b) => b[2] - a[2])
+    count = 0
+    currentPlace.map((e) => {
+        currentPlace[count][1] = count + 1;
+        count += 1;
+    })
+    let updatedPlace =  new Array<number>
+    for(let i = 0; i < numplayers; i++){
+      updatedPlace.push(0)
+    }
+    count = 0
+    currentPlace.map((e) => 
+      updatedPlace[e[0] - 1] = e[0] - e[1] 
+    )
       return (     
     <div style={{  padding: '10px', margin: '15px', width: '100%', fontSize: '1.2em', backgroundColor: '#202c34', borderRadius: '16px' }}>
     
