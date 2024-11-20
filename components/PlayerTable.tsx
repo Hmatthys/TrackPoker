@@ -34,6 +34,10 @@ export default async function Index() {
     .from('sessions')
     .select('player, game, profit')
     .eq('game', numgames);
+
+  if(!lastGame){
+    return <p>Last game error</p>
+  }
     
     
     let currentPlace =  new Array<[number, number, number]>(numplayers)
@@ -41,12 +45,12 @@ export default async function Index() {
     let playerData = new Array<[number, string, number, number, number]>
     player.map((e) => {
         playerData.push([e.playerid, e.name, e.number_of_sessions, e.profit, count])
-        currentPlace[e.playerid][0] = count;
-        currentPlace[e.playerid][2] = e.profit;
+        currentPlace[e.playerid - 1][0] = count;
+        currentPlace[e.playerid - 1][2] = e.profit;
         count += 1;
     })
-    lastGame?.map((e) => {
-      currentPlace[e.player][2] -= e.profit;
+    lastGame.map((e) => {
+      currentPlace[e.player - 1][2] -= e.profit;
     })
     currentPlace.sort((a, b) => b[2] - a[2])
     count = 0
