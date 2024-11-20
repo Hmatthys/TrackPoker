@@ -40,9 +40,9 @@ export default async function Index() {
   }
     
     
-    // let currentPlace =  new Array<[number, number, number]>(numplayers);
+    let currentPlace =  new Array<[number, number, number]>(numplayers);
     // let count = 1;
-    // let playerData = new Array<[number, string, number, number, number]>;
+    let playerData = new Array<[number, string, number, number, number]>(numplayers);
     // player.map((e) => {
     //     playerData.push([e.playerid, e.name, e.number_of_sessions, e.profit, count]);
     //     currentPlace[e.playerid - 1][0] = count;
@@ -75,14 +75,14 @@ export default async function Index() {
         <th style = {{textAlign: 'center'}}>Average Profit</th>
         <th style = {{textAlign: 'center'}}>Change</th>
         </tr>
-            {/* {playerData.map((player) => (
+            {playerData.map((player) => (
             <tr key={player[0]} style= {{borderBottom: '1px solid gray'}}>
             <td style = {{borderBottom: '1px', borderColor: 'white'}}><Link href={`/players/${player[0]}`}>{player[1]}</Link></td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[3]}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[2]}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{Math.floor(player[3] / player[2])}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{updatedPlace[player[4] - 1]}</td>
-            </tr>))}  */}
+            </tr>))} 
         
         </table>  
     </div>
