@@ -7,10 +7,10 @@ import Player from "@/app/players/[playerid]/page";
 
 function returnChange(a: number): string{
   if(a > 0){
-    return ('↑' + a)
+    return ('↑ ' + a)
   }
   if(a < 0){
-    return ('↓' + Math.abs(a))
+    return ('↓ ' + Math.abs(a))
   }
   return '-'
 }
