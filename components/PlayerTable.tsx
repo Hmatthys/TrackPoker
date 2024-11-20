@@ -49,6 +49,7 @@ export default async function Index() {
         currentPlace[e.playerid - 1][2] = e.profit;
         count += 1;
     })
+    return <p>1</p>
     lastGame.map((e) => {
       currentPlace[e.player - 1][2] -= e.profit;
     })
