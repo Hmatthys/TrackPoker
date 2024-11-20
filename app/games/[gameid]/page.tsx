@@ -52,7 +52,7 @@ export default async function Game({ params: { gameid } }: { params: { gameid: s
               <th style = {{textAlign: 'center'}}>Profit</th>
             </tr>
             {game.map((game) => (
-              <tr key={game.name}>
+              <tr key={game.name} style= {{borderBottom: '1px solid gray'}}>
                 <td>{game.name}</td>
                 <td style = {{  textAlign: 'center' }}>{game.profit}</td>
               </tr>))}

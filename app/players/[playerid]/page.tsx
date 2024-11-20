@@ -123,7 +123,7 @@ const chartData = {
               <th style = {{textAlign: 'center'}}>Profit</th> 
               </tr>
               {sessions.map((sessions) =>(
-                <tr key={sessions.game}>
+                <tr key={sessions.game} style= {{borderBottom: '1px solid gray'}}>
                   <td><Link href={`/../../games/${sessions.game}`}>{sessions.game}</Link></td>
                   <td style = {{  textAlign: 'center' }}>{sessions.profit}</td> 
                 </tr>
