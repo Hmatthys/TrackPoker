@@ -57,7 +57,7 @@ export default async function Index() {
     let updatedPlace =  new Array<number>(numplayers)
     count = 0
     currentPlace.map((e) => {
-      updatedPlace[e[0]] = e[0] - e[1] 
+      updatedPlace[e[0] - 1] = e[0] - e[1] 
     })
       return (     
     <div style={{  padding: '10px', margin: '15px', width: '100%', fontSize: '1.2em', backgroundColor: '#202c34', borderRadius: '16px' }}>
@@ -76,7 +76,7 @@ export default async function Index() {
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[3]}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[2]}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{Math.floor(player[3] / player[2])}</td>
-            <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{updatedPlace[player[4]]}</td>
+            <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{updatedPlace[player[4] - 1]}</td>
             </tr>))} 
         
         </table>  
