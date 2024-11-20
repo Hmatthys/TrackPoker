@@ -50,20 +50,20 @@ export default async function Index() {
         count += 1;
     })
     
-    lastGame.map((e) => 
-      currentPlace[e.player - 1][2] -= e.profit
-    )
-    currentPlace.sort((a, b) => b[2] - a[2])
-    count = 0
-    currentPlace.map((e) => {
-        currentPlace[count][1] = count + 1;
-        count += 1;
-    })
+    // lastGame.map((e) => 
+    //   currentPlace[e.player - 1][2] -= e.profit
+    // )
+    // currentPlace.sort((a, b) => b[2] - a[2])
+    // count = 0
+    // currentPlace.map((e) => {
+    //     currentPlace[count][1] = count + 1;
+    //     count += 1;
+    // })
     let updatedPlace =  new Array<number>(numplayers)
-    count = 0
-    currentPlace.map((e) => 
-      updatedPlace[e[0] - 1] = e[0] - e[1] 
-    )
+    // count = 0
+    // currentPlace.map((e) => 
+    //   updatedPlace[e[0] - 1] = e[0] - e[1] 
+    // )
       return (     
     <div style={{  padding: '10px', margin: '15px', width: '100%', fontSize: '1.2em', backgroundColor: '#202c34', borderRadius: '16px' }}>
     
