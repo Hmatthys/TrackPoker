@@ -5,7 +5,15 @@ import Link from 'next/link';
 import React from 'react';
 import Player from "@/app/players/[playerid]/page";
 
-
+function returnChange(a: number): string{
+  if(a > 0){
+    return ('↑' + a)
+  }
+  if(a < 0){
+    return ('↓' + Math.abs(a))
+  }
+  return '-'
+}
 
 export default async function Index() {
 
@@ -87,7 +95,7 @@ export default async function Index() {
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[3]}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[2]}</td>
             <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{Math.floor(player[3] / player[2])}</td>
-            <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{updatedPlace[player[4] - 1]}</td>
+            <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{returnChange(updatedPlace[player[4] - 1])}</td>
             </tr>))} 
         
         </table>  
