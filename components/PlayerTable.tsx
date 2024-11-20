@@ -40,7 +40,10 @@ export default async function Index() {
   }
     
     
-    let currentPlace =  new Array<[number, number, number]>(numplayers);
+    let currentPlace =  new Array<[number, number, number]>;
+    for (let i = 0; i < numplayers; i++){
+      currentPlace.push([0,0,0])
+    }
     let count = 1;
     let playerData = new Array<[number, string, number, number, number]>;
     player.map((e) => {
