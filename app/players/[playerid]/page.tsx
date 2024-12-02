@@ -99,6 +99,11 @@ const chartData = {
       },
       tooltips: {
         enables: false
+      },
+      elements: {
+        point:{
+            radius: 0
+        }
       }
   };
 
