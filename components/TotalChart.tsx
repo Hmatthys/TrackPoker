@@ -79,7 +79,11 @@ export default async function Index() {
         datasets: sets
     };
     const options = {
-        
+        elements: {
+                    point:{
+                        radius: 0
+                    }
+                }
     }
 
   return (     
