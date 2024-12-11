@@ -137,6 +137,24 @@ export default async function Player() {
               </select>
               <input id="p11profit" name="profit" type ="number" step="0.25" style={{margin: '12px', width: '40%', color: 'black'}}/>
 
+              <p><label>Player 12 (id), (profit)</label></p>
+              <select id="p12" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
+              <input id="p12profit" name="profit" type ="number" step="0.25" style={{margin: '12px', width: '40%', color: 'black'}}/>
+
+              <p><label>Player 13 (id), (profit)</label></p>
+              <select id="p13" name="id" style={{color: 'black', width: '40%'}}>
+              <option value={0}> </option>
+                {players?.map((player)=>
+                <option value={player.playerid}>{player.name}</option>
+                )}
+              </select>
+              <input id="p13profit" name="profit" type ="number" step="0.25" style={{margin: '12px', width: '40%', color: 'black'}}/>
+
 
               <p><button formAction={submitGame} style={{backgroundColor: 'white', color: 'black', textAlign: 'center' }}>Submit</button></p>
 
