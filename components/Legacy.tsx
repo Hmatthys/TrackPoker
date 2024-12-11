@@ -13,10 +13,10 @@ export default async function Index() {
 
     return (
         <div>
-            <div style = {{width: '45%'}}>
+            <div style = {{width: '20%'}}>
                 <PlayerTable />   
             </div>
-            <div style = {{width: '45%'}}>
+            <div style = {{width: '20%'}}>
                 <GameTable />
             </div>
             <div style = {{width: '100%'}}>
