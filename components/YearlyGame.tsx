@@ -23,10 +23,19 @@ export default async function Index() {
  
 
 
-  const { data: games } = await supabase.from('game').select();
+  const { data: games } = await supabase
+    .from('game')
+    .select();
     if(!games){
       return <p>No games</p>
     }
+
+    let thisYear = [];
+    games.map((e) => (
+        if(getYear(e.gamedate) == 25){
+            thisYear.push(g)
+        }
+    ))
 
       return (
       
