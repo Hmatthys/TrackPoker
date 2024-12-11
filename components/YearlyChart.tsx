@@ -54,7 +54,7 @@ export default async function Index() {
             .from('sessions')
             .select('game, profit')
             .eq('player', players[i].playerid)
-            .gte('game', startGame); // only take sessions from this year
+            .gt('game', startGame - 1); // only take sessions from this year
             if(playerSessionsError){
                 return <p>playerSessionsError</p>
             }
