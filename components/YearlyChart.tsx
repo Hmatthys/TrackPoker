@@ -54,7 +54,7 @@ export default async function Index() {
             .from('sessions')
             .select('game, profit')
             .eq('player', players[i].playerid)
-            .gt('game', startGame - 1); // only take sessions from this year
+            .gte('game', startGame); // only take sessions from this year
             if(playerSessionsError){
                 return <p>playerSessionsError</p>
             }
@@ -64,7 +64,7 @@ export default async function Index() {
         }
         for(let k = 0; k < playerSessions.length; k++){
            
-            results[i][playerSessions[k].game] = playerSessions[k].profit
+            results[i][playerSessions[k].game - startGame + 1] = playerSessions[k].profit
         }
 
         for(let l = 1; l < results[i].length; l++){
