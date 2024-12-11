@@ -8,22 +8,35 @@ import {  Chart  } from 'primereact/chart';
 
 export default async function Index() {
 
+  const YEAR = 25
+
   const supabase = createClient();
   
-  const {data: players, error: playerserror} = await supabase
-    .from('orderedresults')
-    .select()
-    .gt('number_of_sessions', 5)
-    if(playerserror){
-        return <p>Players error</p>
-    }
+  
 
-  const {data: games, error: gameserror} = await supabase
-    .from('game')
-    .select()
+    const {data: games, error: gameserror} = await supabase
+        .from('game')
+        .select()
+        .gt('gamedate', YEAR * 10000)
     if(gameserror){
         return <p>Games error</p>
     }
+    
+    // Find the gameid of the first game of the year, all gameids after this will be of current year
+        games.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
+
+        const startGame = games[0].gameid
+
+    const {data: players, error: playerserror} = await supabase
+        .from('orderedresults')
+        .select()
+        .gte('latest_game', startGame) // Only take players who have played a session this year
+        if(playerserror){
+            return <p>Players error</p>
+        }
+
+    
+
 
     
     let results = new Array<Array<number>>
@@ -40,7 +53,8 @@ export default async function Index() {
         let {data: playerSessions, error: playerSessionsError} = await supabase
             .from('sessions')
             .select('game, profit')
-            .eq('player', players[i].playerid);
+            .eq('player', players[i].playerid)
+            .gte('game', startGame); // only take sessions from this year
             if(playerSessionsError){
                 return <p>playerSessionsError</p>
             }

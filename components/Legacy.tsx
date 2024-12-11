@@ -13,10 +13,10 @@ export default async function Index() {
 
     return (
         <div style = {{display: 'inline-block'}}>
-            <div style = {{width: '20%'}}>
+            <div style = {{width: '100%'}}>
                 <PlayerTable />   
             </div>
-            <div style = {{width: '20%'}}>
+            <div style = {{width: '100%'}}>
                 <GameTable />
             </div>
             <div style = {{width: '100%'}}>

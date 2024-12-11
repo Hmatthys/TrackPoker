@@ -4,6 +4,12 @@ import { createClient } from "@/utils/supabase/server";
 import Link from 'next/link';
 import React from 'react';
 
+
+
+
+const YEAR = 25
+
+
 function getYear(a: number): number{
   return Math.floor(a / 10000);
 }
@@ -30,12 +36,7 @@ export default async function Index() {
       return <p>No games</p>
     }
 
-    let thisYear = [];
-    games.map((e) => (
-        if(getYear(e.gamedate) == 25){
-            thisYear.push(g)
-        }
-    ))
+    const thisYear = games.filter((g) => (getYear(g.gamedate) == YEAR))
 
       return (
       
@@ -48,7 +49,7 @@ export default async function Index() {
             </tr>
             
         
-            {games.map((games) => (
+            {thisYear.map((games) => (
                 <tr key={games.gameid} style= {{borderBottom: '1px solid gray'}}>
                     <td><Link href={`/games/${games.gameid}`}>{getMonth(games.gamedate)}/{getDay(games.gamedate)}/{getYear(games.gamedate)}</Link></td>
                     <td style = {{  textAlign: 'center' }}>{games.location}</td>
