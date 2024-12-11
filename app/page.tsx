@@ -4,6 +4,9 @@
 import PlayerTable from "@/components/PlayerTable";
 import GameTable from "@/components/GameTable";
 import TotalChart from "@/components/TotalChart";
+import YearlyGame from "@/components/YearlyGame";
+import YearlyChart from "@/components/YearlyChart";
+import YearlyPlayer from "@/components/YearlyPlayer";
 import Legacy from "@/components/Legacy";
 import { TabView, TabPanel } from 'primereact/tabview';
 import React from 'react';
@@ -23,10 +26,10 @@ export default async function Index() {
                 <PlayerTable />
               </TabPanel>
               <TabPanel header="♣   Games" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
-                <GameTable />
+                <YearlyGame />
               </TabPanel>
               <TabPanel header="♦   Chart" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
-                <TotalChart />
+                <YearlyChart />
               </TabPanel>
               <TabPanel header="♥   Total" headerStyle={{ marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
                 <Legacy />
