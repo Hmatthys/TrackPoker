@@ -76,7 +76,11 @@ export default async function Index() {
      let places = new Array<[number, number, number, number]>; // ID PROFIT CURRENT-PLACE LAST-WEEK-PLACE
 
      for(let i = 0; i < playerData.length; i++){
-      places.push([playerData[i][0], playerData[i][3], i, 0 ])
+      places.push([0,0,0,0])
+      
+     }
+     for(let i = 0; i < playerData.length; i++){
+      places[i] = [playerData[i][0], playerData[i][3], i, 0 ]
      }
 
      const {data: game, error: gameerror, count: numgames} = await supabase
