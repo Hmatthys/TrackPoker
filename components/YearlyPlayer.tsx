@@ -107,11 +107,7 @@ export default async function Index() {
       
 
       for(let i = 0; i < places.length; i++){
-        let playerIndex = playerData.map(e => e[0]).indexOf(places[i][0]);
-        places[i][3] = i;
-
-        playerData[playerIndex][4] = places[i][3] - places[i][2];
-
+        playerData[places[i][2]][4] = i - places[i][2];
       }
 
 
