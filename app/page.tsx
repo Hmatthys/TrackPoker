@@ -31,7 +31,7 @@ export default async function Index() {
               <TabPanel header="♦   Chart" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
                 <YearlyChart />
               </TabPanel>
-              <TabPanel header="♥   Total" headerStyle={{ marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
+              <TabPanel header="♥   All-Time" headerStyle={{ marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
                 <Legacy />
               </TabPanel>
             </TabView>

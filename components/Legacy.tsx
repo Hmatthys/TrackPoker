@@ -12,7 +12,7 @@ export default async function Index() {
 
 
     return (
-        <div style = {{display: 'inline-block'}}>
+        <div>
             <div>
                 <PlayerTable />   
             </div>
