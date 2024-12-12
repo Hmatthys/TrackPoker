@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Chart } from 'primereact/chart';
 
 
-const YEAR = 25
+const YEAR = 24
 
 function averageProfit(gp: number, profit: number): number{
     return (Math.floor(profit / gp))

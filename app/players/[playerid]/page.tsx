@@ -12,7 +12,7 @@ import CurrentPlayer from "@/components/CurrentPlayer";
 
 
 
-const YEAR = 25
+const YEAR = 24
 
 
 export default async function Player({ params: { playerid } }: { params: { playerid: string } }) {

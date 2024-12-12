@@ -8,7 +8,7 @@ import {  Chart  } from 'primereact/chart';
 
 export default async function Index() {
 
-  const YEAR = 25
+  const YEAR = 24
 
   const supabase = createClient();
   
