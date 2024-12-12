@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Chart } from 'primereact/chart';
 
 
+const YEAR = 25
+
 function averageProfit(gp: number, profit: number): number{
     return (Math.floor(profit / gp))
   }
@@ -21,40 +23,71 @@ function averageProfit(gp: number, profit: number): number{
 export default async function Index( {id} : {id:string} ) {
     const supabase = createClient();
 
-  
+    
+
+
+    const {data: player, error: playererror} = await supabase
+        .from('player')
+        .select()
+        .eq('playerid', id)
+        .single();
+
+    if(playererror){
+        return <p> player error</p>
+    }
+
+
+    const {data: games, error: gameserror} = await supabase
+    .from('game')
+    .select()
+    .gt('gamedate', YEAR * 10000)
+    if(gameserror){
+        return <p>Games error</p>
+    }
+
+// Find the gameid of the first game of the year, all gameids after this will be of current year
+    games.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
+
+    const startGame = games[0].gameid
 
   
-  
+  const {data: results, error: resultserror} = await supabase
+    .from('orderedresults')
+    .select()
+    .eq('playerid', id)
+    .single();
+
+
+  if(resultserror){
+    return <p> results error</p>
+  }
       
   
 
 const {data: sessions, error: sessionerror} = await supabase
     .from('sessions')
     .select('game, profit')
-    .eq('player', id);
+    .eq('player', id)
+    .gte('game', startGame);
     if(sessionerror){
       return <p>Session error</p>
     }
 
-  const { data: player, error: playererror } = await supabase
-  .from('player')
-  .select('name')
-  .eq( 'playerid', id )
-  .single();
-  if(playererror){
-    return <p>player error</p>
-  };
-  
-  
-  
-  const { data: results, error: resultserror} = await supabase
-    .from('results')
-    .select()
-    .eq('name', player.name);
-    if(resultserror){
-      return <p>results error</p>
+    if(results.latest_game < startGame){
+        return <p> NO GAMES PLAYED THIS YEAR</p>
     }
-  const playerResults = results[0];
+
+
+    let yearProfit = 0;
+    for(let i = 0; i < sessions.length; i++){
+        yearProfit += sessions[i].profit;
+    }
+
+
+  
+  
+  
+
 
 let gamesPlayedIn = new Array<number>;
 
@@ -110,11 +143,11 @@ const chartData = {
 
       <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
         <h1>
-          <p><u>{playerResults.name}'s overall results</u>:</p>
+          <p><u>{player.name}'s overall results</u>:</p>
           <br></br>
-          <p>Number of sessions played: {playerResults.number_of_sessions}</p>
-          <p>Total profit: {playerResults.profit}</p>
-          <p>Average profit: {averageProfit(playerResults.number_of_sessions, playerResults.profit)}</p>
+          <p>Number of sessions played: {sessions.length}</p>
+          <p>Total profit: {yearProfit}</p>
+          <p>Average profit: {Math.floor(yearProfit/sessions.length)}</p>
         </h1> 
         </div>
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>

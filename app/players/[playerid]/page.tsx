@@ -12,7 +12,7 @@ import CurrentPlayer from "@/components/CurrentPlayer";
 
 
 
-
+const YEAR = 25
 
 
 export default async function Player({ params: { playerid } }: { params: { playerid: string } }) {
@@ -20,10 +20,10 @@ export default async function Player({ params: { playerid } }: { params: { playe
   return (
     <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
       <TabView>
-        <TabPanel header="Current">
+        <TabPanel header={2000 + YEAR} headerStyle={{marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
             <CurrentPlayer id = { playerid }/>
         </TabPanel>
-        <TabPanel header="All-Time">
+        <TabPanel header="All-Time" headerStyle={{ marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
             <LegacyPlayer id = { playerid }/>
         </TabPanel>
       </TabView>
