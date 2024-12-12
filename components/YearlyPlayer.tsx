@@ -97,11 +97,13 @@ export default async function Index() {
         return <p> last game error</p>
       }
       for(let j = 0; j< lastGameSessions.length; j++){
-            let placeIndex = places.map(e => e[0]).indexOf(lastGameSessions[j].player)
-          
-            places[placeIndex][1] -= lastGameSessions[j].profit
+            for(let k = 0; k < places.length; k++){
+              if (places[k][0] == lastGameSessions[j].player){
+                places[k][1] -= lastGameSessions[j].profit
+              }
+            }
       }
-      places.sort((a,b) => a[1] > b[1] ? -1 : a[1] < b[1] ? 1 : 0);
+      places.sort((a,b) => a[1] > b[1] ? 1 : a[1] < b[1] ? 1 : 0);
 
       for(let i = 0; i < places.length; i++){
         let playerIndex = playerData.map(e => e[0]).indexOf(places[i][0]);
