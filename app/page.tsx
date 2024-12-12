@@ -22,16 +22,16 @@ export default async function Index() {
 
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
             <TabView style={{}}>
-              <TabPanel header="♠   Players" headerStyle={{marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
+              <TabPanel header="♤   Players" headerStyle={{marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
                 <YearlyPlayer />
               </TabPanel>
-              <TabPanel header="♣   Games" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
+              <TabPanel header="♧   Games" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
                 <YearlyGame />
               </TabPanel>
-              <TabPanel header="♦   Chart" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
+              <TabPanel header="♢   Chart" headerStyle={{marginLeft: '0.5rem',  width: '20%',  backgroundColor: '#202c34', textAlign: 'center' }}>
                 <YearlyChart />
               </TabPanel>
-              <TabPanel header="♥   All-Time" headerStyle={{ marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
+              <TabPanel header="♡   All-Time" headerStyle={{ marginLeft: '0.5rem', width: '20%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
                 <Legacy />
               </TabPanel>
             </TabView>
