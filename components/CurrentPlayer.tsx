@@ -143,7 +143,7 @@ const chartData = {
 
       <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
         <h1>
-          <p><u>{player.name}'s overall results</u>:</p>
+          <p><u>{player.name}'s {2000 + YEAR} results</u>:</p>
           <br></br>
           <p>Number of sessions played: {sessions.length}</p>
           <p>Total profit: {yearProfit}</p>
