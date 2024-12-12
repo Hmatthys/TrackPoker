@@ -66,12 +66,12 @@ export default async function Index() {
         for(let j = 0; j < playerSessions.length; j++){
           profitSum += playerSessions[j].profit;
         }
-        playerData.push([player[i].playerid, player[i].name, profitSum, playerSessions.length, 0])
+        playerData.push([player[i].playerid, player[i].name, playerSessions.length, profitSum,  0])
 
      }
 
-     
-      
+     let places = new Array<[number, number, number]>;
+     playerData.sort((a, b) => a[2] > b[2] ? 1 : a[2] < b[2] ? -1 : 0)
 
 
 
