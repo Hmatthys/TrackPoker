@@ -96,7 +96,7 @@ export default async function Index() {
     const {data: lastGameSessions, error: lastgameerror} = await supabase
         .from('sessions')
         .select('player, profit')
-        .eq('game', numgames + 1)
+        .eq('game', numgames)
       if(lastgameerror){
         return <p> last game error</p>
       }
