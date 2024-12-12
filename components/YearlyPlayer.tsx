@@ -66,7 +66,7 @@ export default async function Index() {
         for(let j = 0; j < playerSessions.length; j++){
           profitSum += playerSessions[j].profit;
         }
-        playerData.push([player[i].playerid, player[i].name, playerSessions.length, profitSum,  0])
+        playerData.push([player[i].playerid, player[i].name, playerSessions.length, profitSum,  50])
 
      }
 
