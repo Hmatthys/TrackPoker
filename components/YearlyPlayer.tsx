@@ -103,7 +103,8 @@ export default async function Index() {
               }
             }
       }
-      places.sort((a,b) => a[1] > b[1] ? 1 : a[1] < b[1] ? 1 : 0);
+      places.sort((a,b) => b[1] - a[1]);
+      
 
       for(let i = 0; i < places.length; i++){
         let playerIndex = playerData.map(e => e[0]).indexOf(places[i][0]);
