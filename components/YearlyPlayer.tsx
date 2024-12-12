@@ -48,7 +48,7 @@ export default async function Index() {
       }
 
       let profits = Array<number>(player.length).fill(0);
-      let playerData = new Array<[number, string, number, number, number]>;
+      let playerData = new Array<[number, string, number, number, number]>; // ID NAME NUM_GAMES PROFIT CHANGE
      for(let i = 0; i < player.length; i++){
         let {data: playerSessions, error: sessionerror} = await supabase
           .from('sessions')
@@ -70,9 +70,46 @@ export default async function Index() {
 
      }
 
-     let places = new Array<[number, number, number]>;
+     
      playerData.sort((a, b) => a[3] > b[3] ? -1 : a[3] < b[3] ? 1 : 0)
 
+     let places = new Array<[number, number, number, number]>; // ID PROFIT CURRENT-PLACE LAST-WEEK-PLACE
+
+     for(let i = 0; i < playerData.length; i++){
+      places.push([playerData[i][0], playerData[i][3], i, 0 ])
+     }
+
+     const {data: game, error: gameerror, count: numgames} = await supabase
+        .from('game')
+        .select('*', {count: 'exact', head: true})
+        if(gameerror){
+            return <p>Count error</p>
+        }
+        if(!numgames){
+          return <p> counting error</p>
+        }
+
+    const {data: lastGameSessions, error: lastgameerror} = await supabase
+        .from('sessions')
+        .select('player, profit')
+        .eq('game', numgames + 1)
+      if(lastgameerror){
+        return <p> last game error</p>
+      }
+      for(let j = 0; j< lastGameSessions.length; j++){
+            let placeIndex = places.map(e => e[0]).indexOf(lastGameSessions[j].player)
+          
+            places[placeIndex][1] -= lastGameSessions[j].profit
+      }
+      places.sort((a,b) => a[1] > b[1] ? -1 : a[1] < b[1] ? 1 : 0);
+
+      for(let i = 0; i < places.length; i++){
+        let playerIndex = playerData.map(e => e[0]).indexOf(places[i][0]);
+        places[i][3] = i;
+
+        playerData[playerIndex][4] = places[i][3] - places[i][2];
+
+      }
 
 
       
@@ -82,9 +119,7 @@ export default async function Index() {
       //       if(gameerror){
       //           return <p>Count error</p>
       //       }
-      
-
-      const numplayers = player.length
+    
 
 
       // const { data: lastGame } = await supabase
@@ -144,7 +179,7 @@ export default async function Index() {
                 <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[3]}</td>
                 <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{player[2]}</td>
                 <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{Math.floor(player[3] / player[2])}</td>
-                {/*<td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{returnChange(updatedPlace[player[4] - 1])}</td>*/}
+                <td style = {{textAlign: 'center', borderBottom: '1px', borderColor: 'white'}}>{returnChange(player[4])}</td>
                 </tr>))} 
             
             </table>  
