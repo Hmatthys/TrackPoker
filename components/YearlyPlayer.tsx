@@ -71,7 +71,7 @@ export default async function Index() {
      }
 
      let places = new Array<[number, number, number]>;
-     playerData.sort((a, b) => a[2] > b[2] ? 1 : a[2] < b[2] ? -1 : 0)
+     playerData.sort((a, b) => a[3] > b[3] ? -1 : a[3] < b[3] ? 1 : 0)
 
 
 
