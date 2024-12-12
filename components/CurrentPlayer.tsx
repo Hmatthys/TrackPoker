@@ -39,7 +39,7 @@ const {data: sessions, error: sessionerror} = await supabase
   const { data: player, error: playererror } = await supabase
   .from('player')
   .select('name')
-  .match( {id} )
+  .eq( 'playerid', id )
   .single();
   if(playererror){
     return <p>player error</p>
