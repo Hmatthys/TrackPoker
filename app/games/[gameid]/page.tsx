@@ -58,9 +58,14 @@ export default async function Game({ params: { gameid } }: { params: { gameid: s
               </tr>))}
             </table>
           </div>
-        
         <br></br>
-        <u><a href={'/../..'}>Home</a></u>
+        <div style = {{  width: '100%' }}>
+
+          <p style = {{ textAlign: 'center' }}>
+            <u><a href={'/../..'}>Home</a></u>
+          </p>
+          
+        </div>
       </div>
     
     

@@ -37,6 +37,8 @@ export default async function Index() {
     }
 
     const thisYear = games.filter((g) => (getYear(g.gamedate) == YEAR))
+    // Make games in order of date, gets messed up sometimes
+    thisYear.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
 
       return (
       

@@ -27,6 +27,9 @@ export default async function Index() {
     if(!games){
       return <p>No games</p>
     }
+    // Make games in order of date, gets messed up sometimes
+    games.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
+
 
       return (
       
