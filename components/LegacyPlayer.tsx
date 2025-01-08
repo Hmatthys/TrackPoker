@@ -103,7 +103,49 @@ const chartData = {
       }
   };
 
-
+  if(sessions.length > 1){
+    return (
+      <div style={{ width: '100%', margin: '0 auto'}}>
+  
+        <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
+          <h1>
+            <p><u>{playerResults.name}'s overall results</u>:</p>
+            <br></br>
+            <p>Number of sessions played: {playerResults.number_of_sessions}</p>
+            <p>Total profit: {playerResults.profit}</p>
+            <p>Average profit: {averageProfit(playerResults.number_of_sessions, playerResults.profit)}</p>
+          </h1> 
+          </div>
+            <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
+              <table style={{ width: '100%' }}>
+                <tr>
+                <th style = {{textAlign: 'left', width: '65%', borderBottom: '1px', borderColor: 'white'}}>Game</th>
+                <th style = {{textAlign: 'center'}}>Profit</th> 
+                </tr>
+                {sessions.map((sessions) =>(
+                  <tr key={sessions.game} style= {{borderBottom: '1px solid gray'}}>
+                    <td><Link href={`/../../games/${sessions.game}`}>{sessions.game}</Link></td>
+                    <td style = {{  textAlign: 'center' }}>{sessions.profit}</td> 
+                  </tr>
+                ))}
+              </table>
+                
+              
+            </div>
+          <div style = {{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px'}}>
+            <Chart type="line" data={chartData} options={options} />
+          </div>
+          <div style = {{  width: '100%' }}>
+            <p style = {{ textAlign: 'center' }}>
+              <u><a href={'/../..'}>Home</a></u>
+            </p>
+            
+          </div>
+          
+        </div>
+      
+    );
+  }
 
   return (
     <div style={{ width: '100%', margin: '0 auto'}}>
@@ -133,9 +175,6 @@ const chartData = {
               
             
           </div>
-        <div style = {{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px'}}>
-          <Chart type="line" data={chartData} options={options} />
-        </div>
         <div style = {{  width: '100%' }}>
           <p style = {{ textAlign: 'center' }}>
             <u><a href={'/../..'}>Home</a></u>
