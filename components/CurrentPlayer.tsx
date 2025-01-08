@@ -192,7 +192,7 @@ const chartData = {
         <p>Average profit: {Math.floor(yearProfit/sessions.length)}</p>
       </h1> 
       </div>
-        <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
+        <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px'}}>
           <table style={{ width: '100%' }}>
             <tr>
             <th style = {{textAlign: 'left', width: '65%', borderBottom: '1px', borderColor: 'white'}}>Game</th>
