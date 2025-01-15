@@ -11,7 +11,7 @@ import Legacy from "@/components/Legacy";
 import Yearly from "@/components/Yearly";
 import { TabView, TabPanel } from 'primereact/tabview';
 import React from 'react';
-// import "./globals.css";
+import "globals.css";
 
 
 
