@@ -2,7 +2,7 @@
 import { createClient } from "@/utils/supabase/server";
 import React, { useEffect, useState } from 'react';
 import { submitGame, createPlayer } from './actions'
-import "./globals.css";
+
 
 
 
