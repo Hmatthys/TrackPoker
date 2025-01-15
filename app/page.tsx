@@ -19,7 +19,9 @@ export default async function Index() {
  
 
       return (
+          <body>
 
+          
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
             <TabView>
               <TabPanel header="♤   Players" headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
@@ -37,6 +39,7 @@ export default async function Index() {
             </TabView>
              
           </div>
+          </body>
       );
 }
       
