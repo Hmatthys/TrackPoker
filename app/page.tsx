@@ -15,7 +15,7 @@ import "./globals.css";
 
 
 export default async function Index() {
-    document.body.style.backgroundColor = '#04090b'
+    
  
 
       return (
