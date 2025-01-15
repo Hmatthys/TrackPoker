@@ -7,7 +7,7 @@ import React from 'react';
 
 
 
-const YEAR = 25
+
 
 
 function getYear(a: number): number{
@@ -23,15 +23,17 @@ function getDay(a: number): number{
 
 
 
-export default async function Index() {
+export default async function Index( {year} : {year:number} ) {
 
   const supabase = createClient();
- 
+  const YEAR = year
 
 
   const { data: games } = await supabase
     .from('game')
-    .select();
+    .select()
+    .gt('gamedate', year * 10000)
+    .lt('gamedate', (year + 1) * 10000);
     if(!games){
       return <p>No games</p>
     }

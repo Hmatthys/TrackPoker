@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Chart } from 'primereact/chart';
 
 
-const YEAR = 25
+
+
 
 function averageProfit(gp: number, profit: number): number{
     return (Math.floor(profit / gp))
@@ -20,10 +21,11 @@ function averageProfit(gp: number, profit: number): number{
   }
 
 
-export default async function Index( {id} : {id:string} ) {
+export default async function Index( {data} : {data:any}) {
     const supabase = createClient();
 
-    
+    const YEAR = data.year
+    const id = data.id
 
 
     const {data: player, error: playererror} = await supabase
@@ -41,6 +43,7 @@ export default async function Index( {id} : {id:string} ) {
     .from('game')
     .select()
     .gt('gamedate', YEAR * 10000)
+    .lt('gamedate', (YEAR + 1) * 10000)
     if(gameserror){
         return <p>Games error</p>
     }
@@ -208,6 +211,7 @@ const chartData = {
             
           
         </div>
+        
     <div style = {{  width: '100%' }}>
               <p style = {{ textAlign: 'center' }}>
                 <u><a href={'/../..'}>Home</a></u>

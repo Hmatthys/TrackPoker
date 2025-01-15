@@ -14,18 +14,20 @@ function returnChange(a: number): string{
   }
   return '-'
 }
-const YEAR = 25
 
 
-export default async function Index() {
+
+export default async function Index( {year} : {year:number} ) {
 
       const supabase = createClient();
-    
+
+      const YEAR = year
 
       const {data: games, error: gameserror} = await supabase
             .from('game')
             .select()
             .gt('gamedate', YEAR * 10000)
+            .lt('gamedate', (YEAR + 1) * 10000)
         if(gameserror){
             return <p>Games error</p>
         }

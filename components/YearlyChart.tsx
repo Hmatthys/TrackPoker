@@ -6,9 +6,9 @@ import React from 'react';
 import {  Chart  } from 'primereact/chart';
 
 
-export default async function Index() {
+export default async function Index( {year} : {year:number}) {
 
-  const YEAR = 25
+  const YEAR = year
 
   const supabase = createClient();
   
@@ -18,6 +18,7 @@ export default async function Index() {
         .from('game')
         .select()
         .gt('gamedate', YEAR * 10000)
+        .lt('gamedate', (YEAR + 1) * 10000)
     if(gameserror){
         return <p>Games error</p>
     }

@@ -2,6 +2,7 @@
 import { createClient } from "@/utils/supabase/server";
 import React, { useEffect, useState } from 'react';
 import { submitGame, createPlayer } from './actions'
+import "./globals.css";
 
 
 
@@ -27,6 +28,9 @@ export default async function Player() {
 
 
   return (
+    <body>
+
+    
     <div style={{ width: '45%'}}>
 
       
@@ -183,6 +187,6 @@ export default async function Player() {
         </div>
         
       </div>
-    
+    </body>
   );
 }
