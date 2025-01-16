@@ -52,7 +52,7 @@ export default async function Index( {year} : {year:number} ) {
         if(sessionerror){
           return <p>Session Error</p>
         }
-        if(!playerSessions){
+        if(!playerSessions || playerSessions.length < 1){
           continue
         }
         let profitSum = 0;
