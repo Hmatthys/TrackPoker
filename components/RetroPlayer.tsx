@@ -26,7 +26,7 @@ export default async function Index( {year} : {year:number} ) {
         games.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
 
         const startGame = games[0].gameid
-        const endGame = games[-1].gameid
+        const endGame = games[games.length - 1].gameid
 
 
 
