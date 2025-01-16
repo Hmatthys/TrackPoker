@@ -89,7 +89,22 @@ const {data: sessions, error: sessionerror} = await supabase
     }
 
 
-  
+  if(sessions.length < 1){ // JUST STOP IF NO GAMES IN YEAR
+    return (
+      <div>
+          <h1>
+            <p>{player.name} didn't play any games in {2000 + YEAR}</p>
+            
+          </h1> 
+          <div style = {{  width: '100%' }}>
+            <p style = {{ textAlign: 'center' }}>
+              <u><a href={'/../..'}>Home</a></u>
+            </p>
+          
+          </div>
+        </div>
+    );
+  }
   
   
 
@@ -140,7 +155,7 @@ const chartData = {
         }
       }
   };
-
+  
 
   if(sessions.length > 1){
     return (
