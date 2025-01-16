@@ -52,6 +52,7 @@ export default async function Index( {data} : {data:any}) {
     games.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
 
     const startGame = games[0].gameid
+    const endGame = games[games.length - 1].gameid
 
   
   const {data: results, error: resultserror} = await supabase
@@ -71,7 +72,8 @@ const {data: sessions, error: sessionerror} = await supabase
     .from('sessions')
     .select('game, profit')
     .eq('player', id)
-    .gte('game', startGame);
+    .gte('game', startGame)
+    .lte('game', endGame);
     if(sessionerror){
       return <p>Session error</p>
     }
