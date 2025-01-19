@@ -163,8 +163,7 @@ export default async function Player() {
               <p><button formAction={submitGame} style={{backgroundColor: 'white', color: 'black', textAlign: 'center' }}>Submit</button></p>
 
             </form>
-          </div>
-          <div style={{ width: '45%'}}>
+                <br></br>
                 <p>Add a player:</p>
                 <form>
                   <p><label>Name</label></p>
