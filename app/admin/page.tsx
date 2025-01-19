@@ -31,7 +31,7 @@ export default async function Player() {
     <body>
 
     
-    <div style={{ width: '45%'}}>
+    <div style={{ width: '100%'}}>
 
       
           <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem', backgroundColor: '#202c34', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
@@ -169,7 +169,7 @@ export default async function Player() {
                 <form>
                   <p><label>Name</label></p>
                   <input id="playerName" name="name" style={{color: 'black', width: '100%'}}/>
-                  <p></p>
+                  <br></br>
                   <p><button formAction={createPlayer} style={{backgroundColor: 'white', color: 'black', textAlign: 'center'}}>Submit</button></p>
 
 
