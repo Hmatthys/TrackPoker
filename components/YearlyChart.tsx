@@ -50,7 +50,7 @@ export default async function Index( {year} : {year:number}) {
         for(let j = 0; j < games.length + 1; j++){
             playerResult.push(0);
         }
-        results.push(playerResult)
+        
         let {data: playerSessions, error: playerSessionsError} = await supabase
             .from('sessions')
             .select('game, profit')
@@ -59,10 +59,15 @@ export default async function Index( {year} : {year:number}) {
             if(playerSessionsError){
                 return <p>playerSessionsError</p>
             }
+        
         let total = 0;
         if(playerSessions == null){
             return <p> NULL</p>
         }
+        if(playerSessions.length < 5){ // Only show players that have player at least 5 games this year
+            continue
+        }
+        results.push(playerResult) 
         for(let k = 0; k < playerSessions.length; k++){
            
             results[i][playerSessions[k].game - startGame + 1] = playerSessions[k].profit
