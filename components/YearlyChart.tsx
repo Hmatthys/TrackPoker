@@ -37,7 +37,7 @@ export default async function Index( {year} : {year:number}) {
         }
 
     
-
+        let actualPlayer = new Array<any>
 
     
     let results = new Array<Array<number>>
@@ -67,6 +67,7 @@ export default async function Index( {year} : {year:number}) {
         if(playerSessions.length < 5){ // Only show players that have player at least 5 games this year
             continue
         }
+        actualPlayer.push(players[i])
         results.push(playerResult) 
         for(let k = 0; k < playerSessions.length; k++){
            
@@ -85,7 +86,7 @@ export default async function Index( {year} : {year:number}) {
     for (let i = 0; i < players.length; i++){
         sets.push(
             {
-                label: players[i].name,
+                label: actualPlayer[i].name,
                 data: results[i],
                 fill: false,
                 borderColor: COLORS[i],
