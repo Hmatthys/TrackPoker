@@ -1,5 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
 
 
@@ -28,7 +29,7 @@ export default async function Game({ params: { gameid } }: { params: { gameid: s
 
   const { data: game, error } = await supabase
   .from('gameresult')
-  .select('name, profit')
+  .select('name, profit, playerid')
   .eq('game', gameid)
   .order('profit',{ ascending: false});
   if(error){
@@ -53,7 +54,7 @@ export default async function Game({ params: { gameid } }: { params: { gameid: s
             </tr>
             {game.map((game) => (
               <tr key={game.name} style= {{borderBottom: '1px solid gray'}}>
-                <td>{game.name}</td>
+                <td><Link href={`/players/${game.playerid}`}>{game.name}</Link></td>
                 <td style = {{  textAlign: 'center' }}>{game.profit}</td>
               </tr>))}
             </table>
