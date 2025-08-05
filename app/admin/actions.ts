@@ -85,7 +85,7 @@ export async function createPlayer(formData: FormData) {
             redirect('../../')
         }
         
-        const newID = players[0].playerid;
+        const newID = players[0].playerid + 1;
         
         
         const data = {
