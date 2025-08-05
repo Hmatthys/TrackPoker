@@ -77,17 +77,24 @@ export async function createPlayer(formData: FormData) {
 
     const {data: players, error: playererror, count: numplayers} = await supabase
         .from('player')
-        .select('*', {count: 'exact', head: true})
+        .select('playerid')
+        .order('playerid', { ascending: false})
+        .limit(1);
+
         if(playererror){
             redirect('../../')
         }
+        
+        const newID = players[0].playerid;
+        
+        
         const data = {
             name: formData.get('name') as string,
         }
         if(numplayers){
             const{ error: playerAddError } = await supabase
             .from('player')
-            .insert({playerid: numplayers + 1, name: data.name})
+            .insert({playerid: newID, name: data.name})
             if(playerAddError){
                 redirect('../../')
             }
