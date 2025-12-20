@@ -34,13 +34,11 @@ export async function submitGame(formData: FormData) {
         
 
         let values: Array<{}> = []
-        let sum = 1
         let profitSum = 0
         playerdata.players.forEach((e, index) =>{
             if(playerdata.players[index] != "0"){
-               values.push({sessionid: numsessions + sum, game: numgames + 1, player: e, profit: playerdata.profit[index]})
+                values.push({game: numgames + 1, player: e, profit: playerdata.profit[index]})
                 profitSum += parseFloat(playerdata.profit[index])
-            sum += 1 
             }
             
         })
@@ -50,7 +48,7 @@ export async function submitGame(formData: FormData) {
         }
      const { error: createError } = await supabase
         .from('game')
-        .insert({ gameid: numgames + 1, gamedate: data.date, location: data.location  })
+        .insert({ gamedate: data.date, location: data.location  })
 
         if(createError){
             redirect('../../')
