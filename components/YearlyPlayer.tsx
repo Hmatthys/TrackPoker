@@ -31,7 +31,7 @@ export default async function Index( {year} : {year:number} ) {
         if(gameserror){
             return <p>Games error</p>
         }
-        if(games.lengh == 0){
+        if(games.length() == 0){
           return <p>No games yet</p>
         }
         // Find the gameid of the first game of the year, all gameids after this will be of current year
