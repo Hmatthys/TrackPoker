@@ -24,21 +24,25 @@ export default async function Index() {
 
           
           
-            {/* <TabView>  UNCOMMENT*/} 
-              {/* <TabPanel header="♤   Players" headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
-                <YearlyPlayer />
-              </TabPanel> */}
-              {/*  UNCOMMENT <TabPanel header="♧   2025" headerStyle={{marginLeft: '0.5rem',  width: '30%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
-                <Yearly year={25} />
-              </TabPanel>
-              <TabPanel header="♢   2024" headerStyle={{marginLeft: '0.5rem',  width: '30%',  backgroundColor: '#202c34', textAlign: 'center' }}>
-                <Yearly year={24}/>
-              </TabPanel>
-              <TabPanel header="♡   All-Time" headerStyle={{ marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
+            <TabView>
+           
+               <TabPanel header="♧   All-Time" headerStyle={{marginLeft: '0.5rem',  width: '30%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
                 <Legacy />
               </TabPanel>
-            </TabView> */}
-             <p>I broke it all no stats for a bit</p>
+
+              <TabPanel header="♢   2026" headerStyle={{marginLeft: '0.5rem',  width: '30%',  backgroundColor: '#202c34', textAlign: 'center' }}>
+                <Yearly year={26} />
+              </TabPanel>
+
+              <TabPanel header="♤   2025" headerStyle={{marginLeft: '0.5rem',  width: '30%',  backgroundColor: '#202c34', textAlign: 'center' }}>
+                <Yearly year={25} />
+              </TabPanel>
+
+              <TabPanel header="♡   2024" headerStyle={{ marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
+                <Yearly year={24} />
+              </TabPanel>
+
+            </TabView> 
           
           </body>
       );
