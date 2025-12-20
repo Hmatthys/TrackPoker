@@ -6,7 +6,7 @@ import YearlyChart from "@/components/YearlyChart";
 import RetroPlayer from "@/components/RetroPlayer";
 
 
-const REALYEAR = 25
+const REALYEAR = 26
 
 
 export default async function Index({year} : {year:number}) {
