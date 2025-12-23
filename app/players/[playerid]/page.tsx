@@ -25,9 +25,9 @@ export default async function Player({ params: { playerid } }: { params: { playe
     if(gameserror){
         return <p>Games error</p>
     }
-    if(games.length == 0){
-      return <LegacyPlayer id = { playerid }/> // If no games exist this year just return all time
-    }
+    // if(games.length == 0){
+    //   return <LegacyPlayer id = { playerid }/> // If no games exist this year just return all time
+    // }
 // Find the gameid of the first game of the year, all gameids after this will be of current year
     games.sort((a,b) => a.gamedate < b.gamedate ? -1 : a.gamedate > b.gamedate ? 1 : 0)
 
