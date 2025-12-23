@@ -12,7 +12,7 @@ import CurrentPlayer from "@/components/CurrentPlayer";
 
 
 
-const YEAR = 25
+const YEAR = 26
 
 
 export default async function Player({ params: { playerid } }: { params: { playerid: string } }) {
@@ -63,14 +63,18 @@ const {data: sessions, error: sessionerror} = await supabase
   return (
     <div style={{ width: 'clamp(300px, 100%, 900px', margin: '0 auto', padding: '1rem'}}>
       <TabView>
-        <TabPanel header={`♧ ${2000 + YEAR}`} headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
+        
+        <TabPanel header={`♧ All-Time`} headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderTopRightRadius: '16px', borderTopLeftRadius: '16px', textAlign: 'center' }}>
+            <LegacyPlayer id={ playerid }/>
+        </TabPanel>
+        <TabPanel header={`♢ 2026`} headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', textAlign: 'center' }}>
             <CurrentPlayer data={{ year: YEAR, id: playerid}} />
         </TabPanel>
-        <TabPanel header={`♢ 2024`} headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', textAlign: 'center' }}>
-            <CurrentPlayer data={{ year: 24, id: playerid}} />
+        <TabPanel header={`♤ 2025`} headerStyle={{marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', textAlign: 'center' }}>
+            <CurrentPlayer data={{ year: 25, id: playerid}} />
         </TabPanel>
-        <TabPanel header="♡ All-Time" headerStyle={{ marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
-            <LegacyPlayer id={ playerid }/>
+        <TabPanel header="♡ 2024" headerStyle={{ marginLeft: '0.5rem', width: '30%',  backgroundColor: '#202c34', borderBottomRightRadius: '16px', borderBottomLeftRadius: '16px', textAlign: 'center' }}>
+            <CurrentPlayer data={{ year: 24, id: playerid}} />
         </TabPanel>
       </TabView>
     
