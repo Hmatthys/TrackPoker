@@ -56,19 +56,19 @@ export async function submitGame(formData: FormData) {
             let values: Array<{}> = []
             let sum = 1
             let profitSum = 0
-            playerdata.players.forEach((e, index) =>{
-                if(playerdata.players[index] != "0"){
-                    values.push({game: new_id , player: e, profit: playerdata.profit[index]})
-                    profitSum += parseFloat(playerdata.profit[index])
-                sum += 1 
-                }
+            // playerdata.players.forEach((e, index) =>{
+            //     if(playerdata.players[index] != "0"){
+            //         values.push({game: new_id , player: e, profit: playerdata.profit[index]})
+            //         profitSum += parseFloat(playerdata.profit[index])
+            //     sum += 1 
+            //     }
                 
-            })
-            if(profitSum != 0){
-                //Catch profits not zero-ing out
-                redirect('../../')
-            }
-
+            // })
+            // if(profitSum != 0){
+            //     //Catch profits not zero-ing out
+            //     redirect('../../')
+            // }
+            values = [{game: 119, player: 1, profit: 0},{game: 119, player: 1, profit: 0},{game: 119, player: 1, profit: 0},{game: 119, player: 1, profit: 0}]
             const{ error: sessionsError } = await supabase
                 .from('sessions')
                 .insert(values)
@@ -88,10 +88,6 @@ export async function submitGame(formData: FormData) {
     }
 }
 
-const refreshPage = (): void => {
-  window.location.reload();
-};
-
 export async function createPlayer(formData: FormData) {
     const supabase = await createClient()
 
@@ -107,7 +103,7 @@ export async function createPlayer(formData: FormData) {
         if(playerAddError){
             redirect('../../')
         }
-        refreshPage()
+        
 
         
     }
