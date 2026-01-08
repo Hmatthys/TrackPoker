@@ -68,7 +68,10 @@ export async function submitGame(formData: FormData) {
             //     //Catch profits not zero-ing out
             //     redirect('../../')
             // }
-            values = [{game: 119, player: 1, profit: 0},{game: 119, player: 1, profit: 0},{game: 119, player: 1, profit: 0},{game: 119, player: 1, profit: 0}]
+            for (let i = 0; i < 5; i++){
+                values.push({game: new_id, player: 1, profit: 0})
+            }
+            
             const{ error: sessionsError } = await supabase
                 .from('sessions')
                 .insert(values)
