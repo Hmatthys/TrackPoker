@@ -37,7 +37,7 @@ export async function submitGame(formData: FormData) {
         const { data: game_data, error: createError } = await supabase
             .from('game')
             .insert({ gamedate: data.date, location: data.location  })
-            .select()
+            .select();
             if(createError){
                 redirect('../../')
             }
