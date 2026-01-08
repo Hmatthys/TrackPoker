@@ -46,7 +46,7 @@ export async function submitGame(formData: FormData) {
         let new_id = 0
         if(game_data){new_id = game_data[0].gameid} else{redirect('../../')}
             
-        
+        new_id = 119
             
 
         if(new_id){
@@ -82,7 +82,7 @@ export async function submitGame(formData: FormData) {
             
         
             revalidatePath('/', 'layout')
-            if(numgames){
+            if(new_id){
                 redirect(`/games/${new_id}`) 
             }else{
                 redirect('../../')
