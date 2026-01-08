@@ -41,6 +41,8 @@ export async function submitGame(formData: FormData) {
             if(createError){
                 redirect('../../')
             }
+
+        
         let new_id = 0
         if(game_data){new_id = game_data[0].gameid} else{redirect('../../')}
             
@@ -86,36 +88,26 @@ export async function submitGame(formData: FormData) {
     }
 }
 
+const refreshPage = (): void => {
+  window.location.reload();
+};
+
 export async function createPlayer(formData: FormData) {
     const supabase = await createClient()
 
-    const {data: players, error: playererror, count: numplayers} = await supabase
-        .from('player')
-        .select('playerid')
-        .order('playerid', { ascending: false})
-        .limit(1);
 
-        if(playererror){
-            redirect('../../')
-        }
-        
-        const newID = players[0].playerid + 1;
-        
         
         const data = {
             name: formData.get('name') as string,
         }
-        if(numplayers){
-            const{ error: playerAddError } = await supabase
-            .from('player')
-            .insert({playerid: newID, name: data.name})
-            if(playerAddError){
-                redirect('../../')
-            }
-
+       
+        const{ error: playerAddError } = await supabase
+        .from('player')
+        .insert({ name: data.name})
+        if(playerAddError){
+            redirect('../../')
         }
-
-        
+        refreshPage()
 
         
     }
