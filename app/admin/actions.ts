@@ -51,9 +51,7 @@ export async function submitGame(formData: FormData) {
             //Catch profits not zero-ing out
             redirect('../../')
         }
-        for (let i = 0; i < 5; i++){
-            values.push({game: new_id, player: 1, profit: 0})
-        }
+        
         
         const{ error: sessionsError } = await supabase
             .from('sessions')
