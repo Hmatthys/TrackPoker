@@ -83,20 +83,23 @@ export default async function Index() {
       places[i] = [playerData[i][0], playerData[i][3], i, 0 ]
      }
 
-     const {data: game, error: gameerror, count: numgames} = await supabase
+     const {data: game, error: gameerror} = await supabase
         .from('game')
-        .select('*', {count: 'exact', head: true})
+        .select('gameid')
+        .order('gamedate', { ascending: false})
+        .limit(1)
+        .single()
         if(gameerror){
             return <p>Count error</p>
         }
-        if(!numgames){
+        if(!game){
           return <p> counting error</p>
         }
 
     const {data: lastGameSessions, error: lastgameerror} = await supabase
         .from('sessions')
         .select('player, profit')
-        .eq('game', numgames)
+        .eq('game', game.gameid)
       if(lastgameerror){
         return <p> last game error</p>
       }
